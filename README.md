@@ -1,7 +1,7 @@
 # 目的
 OpenHackU2022ONLINE[^1]での成果物です。
 
-[^1]https://hacku.yahoo.co.jp/2022/
+[^1]:https://hacku.yahoo.co.jp/2022/
 
 # プレゼンスライド
 https://github.com/king-of-hackathon/facial_expression_highlight/blob/main/HACKU2022ONLINE-hackID9.pdf
