@@ -1,0 +1,80 @@
+{% extends "generator/base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('generator.static', filename='css/upload.css') }}" />
+{% endblock %}
+
+{% block content %}
+<h4>アップロード画面</h4>
+<p>ビデオを選択してください</p>
+<form action="/" enctype=multipart/form-data>
+    <input type=file name=file />
+    <hr>
+    <button id="upload-btn" type="button" class="btn btn-primary btn-sm">upload</button>
+</form>
+
+<div id="select_scene" style="display:none" disabled>
+    <p>シークバーを動かしてハイライトしたい人物が写っている場面を選択してください</p>
+    <div id="video-area"></div>
+    <button id="select-btn" class="btn btn-primary btn-sm">選択する</button>
+</div>
+
+<div id="loader-bg">
+    <div id="loader">
+        <img src="{{ url_for('generator.static', filename='images/loading_image.gif') }}" width="80" height="80"
+            alt="Now Loading..." />
+        <p>Now Loading..</p>
+    </div>
+</div>
+
+<script>
+    $(() => {
+        $('#upload-btn').click(() => {
+            const $form = $('form');
+            const url = $form.attr("action");
+            const $file = $form.find("input[name='file']");
+            const body = new FormData();
+            body.append("video", $file.prop('files')[0]);
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: body,
+                contentType: false,
+                processData: false,
+            }).done((src) => {
+                $('#upload-btn').remove();
+                $("#video-area").html(
+                    $('<video>').prop({
+                        src: src,
+                        class: 'img-fluid',
+                        controls: true,
+                        style: "max-width:50vw; max-height:40vh;"
+                    })
+                );
+                $('#select_scene').show();
+                $('#select_scene').prop("disabled", true);
+            });
+        });
+
+        $('#select-btn').click(() => {
+            $('#select-btn').remove();
+            start_loading();
+            const video = document.querySelector('video');
+            const fileNameIndex = video.src.lastIndexOf("/") + 1;
+            const filename = video.src.substr(fileNameIndex);
+            $.post('/select_scene', {
+                video_name: filename,
+                video_currentTime: video.currentTime,
+            }, function (url) {
+                location.href = url
+            });
+        });
+    });
+
+    function start_loading() {
+        const h = $(window).height();
+        $('#wrap').css('display', 'none');
+        $('#loader-bg ,#loader').height(h).css('display', 'block');
+    }
+
+</script>
+{% endblock %}

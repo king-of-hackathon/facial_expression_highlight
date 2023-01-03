@@ -1,0 +1,37 @@
+body {
+    background-color: #f5f5f5;
+}
+
+h4 {
+    margin-top: 20px;
+}
+
+.dt-image-content {
+    margin: 20px auto;
+    padding: 0;
+}
+
+.dt-image-content header {
+    padding: 10px 10px 0 10px;
+}
+
+.dt-image-content section {
+    padding: 10px 0;
+    margin: auto;
+}
+
+.dt-image-content footer {
+    padding: 10px;
+}
+
+.dt-image-content section video {
+    width: 100%;
+}
+
+.dt-image-file {
+    display: none;
+}
+
+.dt-image-submit {
+    margin-left: 10px;
+}

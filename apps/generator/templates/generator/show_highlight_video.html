@@ -1,0 +1,21 @@
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('generator.static', filename='css/show_highlight_video.css') }}" />
+{% endblock %}
+
+</head>
+<div class="card col-md-7 dt-image-content">
+    {% for video_name in videolist %}
+    <header class="d-flex justify-content-between">
+        <div></div>
+        <a class="bi bi-box-arrow-in-down" href="{{ url_for('generator.image_file', filename=video_name) }}"
+            download="{{ url_for('generator.image_file', filename=image_name) }}"></a>
+    </header>
+    <section>
+        <video src="{{ url_for('generator.image_file', filename=video_name) }}" autoplay muted loop></video>
+    </section>
+    {% endfor %}
+</div>
+
+<div class="col-md-10 text-left dt-image-register-btn">
+    <a href="{{ url_for('generator.upload_file') }}" class="btn btn-primary">topへ</a>
+</div>

@@ -1,0 +1,24 @@
+{% extends "generator/base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('generator.static', filename='css/select_person.css') }}" />
+{% endblock %}
+
+{% block content %}
+<h4>対象とする人物をクリックしてください</h4>
+<div class="container scene-image-area">
+    {% for (id, person_image, (top, bottom, left, right)) in person_image_list %}
+    <form method="post" class="person-image-area"
+        style="top:{{top}}%; bottom:{{bottom}}%; left:{{left}}%; right:{{right}}%;">
+        <button type="submit" name="person_id" value="{{id}}">
+            <img src="{{ url_for('generator.image_file', filename=person_image) }}">
+        </button>
+    </form>
+    {% endfor %}
+    <img src="{{ url_for('generator.image_file', filename=scene_image) }}">
+</div>
+
+<hr />
+<a href="{{ url_for('generator.upload_file') }}">
+    <button class="btn btn-primary btn-sm">戻る</button>
+</a>
+{% endblock %}

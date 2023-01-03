@@ -1,0 +1,29 @@
+from setuptools import find_packages, setup
+
+setup(
+    name="facial_expression_highlight",
+    version="1.0.0",
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        "Flask",
+        "opencv-python",
+        "tensorflow",
+        "onnxruntime",
+        "mmcv",
+        "ipython",
+        "torch",
+        "torchvision",
+        "pandas",
+        "psutil",
+        "tqdm",
+        "matplotlib",
+        "seaborn",
+        "black",
+        "isort",
+        "flake8",
+        "mypy",
+        "python-dotenv",
+        "moviepy",
+    ]
+)
