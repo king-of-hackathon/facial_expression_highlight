@@ -1,36 +1,33 @@
-# 目的
-OpenHackU2022ONLINE[^1]での成果物です。
+# スーピー（仮）
+## 概要
+OpenHackU2022ONLINE[^1]での提出作品の改良版です。
 
 [^1]:https://hacku.yahoo.co.jp/2022/
 
-# プレゼンスライド
+## プレゼンスライド
 https://github.com/king-of-hackathon/facial_expression_highlight/blob/main/HACKU2022ONLINE-hackID9.pdf
 
-# デモ
+## デモ
 https://user-images.githubusercontent.com/57135683/210380181-70e70256-1f9d-4b40-b3f6-56034fdb6b87.mp4
 
-# 環境設定
+## インストールと実行
 ```
 $ git clone https://github.com/king-of-hackathon/facial_expression_highlight
 $ cd facial_expression_highlight
 $ conda create -n highlight-ai python=3.9
 $ conda activate highlight-ai
 (highlight-ai) $ pip install .
+(highlight-ai) $ flask run
+* Running on http://127.0.0.1:5000/
 ```
 
-# 環境の削除
+## 環境の削除
 ```
 $ conda deactivate
 $ conda remove -n highlight-ai --all
 ```
 
-# 実行
-```
-(highlight-ai) $ flask run
-* Running on http://127.0.0.1:5000/
-```
-
-# License
+## License
 
 Copyright [RIshimoto] [石元稜]
 
