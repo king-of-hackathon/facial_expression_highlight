@@ -7,7 +7,10 @@ OpenHackU2022ONLINE[^1]での提出作品の改良版です。
 https://github.com/king-of-hackathon/facial_expression_highlight/blob/main/HACKU2022ONLINE-hackID9.pdf
 
 ## デモ
-https://user-images.githubusercontent.com/57135683/210380181-70e70256-1f9d-4b40-b3f6-56034fdb6b87.mp4
+
+
+https://user-images.githubusercontent.com/57135683/210949086-5bdd833b-5d60-4722-b8e2-e6abdeddd57a.mp4
+
 
 ## インストールと実行
 ```
