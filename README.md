@@ -1,5 +1,5 @@
 ## 概要
-OpenHackU2022ONLINE[^1]での提出作品の改良版です。
+OpenHackU2022ONLINE[^1]での提出作品（改良版）。
 
 [^1]:https://hacku.yahoo.co.jp/2022/
 
